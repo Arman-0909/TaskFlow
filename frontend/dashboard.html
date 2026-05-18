@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="dashboard">
+
+    <div class="topbar">
+
+        <div>
+
+            <h2>Dashboard</h2>
+
+            <p id="roleText">
+                Role: user
+            </p>
+
+        </div>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+
+    <!-- ADMIN PANEL -->
+
+    <div
+        id="adminPanel"
+        class="card"
+        style="display:none;"
+    >
+
+        <h3 style="margin-bottom:15px;">
+            Admin Panel
+        </h3>
+
+        <button onclick="loadUsers()">
+            Load Users
+        </button>
+
+        <div id="users" style="margin-top:15px;"></div>
+
+    </div>
+
+
+    <!-- CREATE TASK -->
+
+    <div class="card">
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Task Title"
+        >
+
+        <textarea
+            id="description"
+            placeholder="Task Description"
+        ></textarea>
+
+        <button onclick="createTask()">
+            Create Task
+        </button>
+
+    </div>
+
+
+    <!-- TASKS -->
+
+    <div id="tasks"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+
+    const role =
+        localStorage.getItem("role")
+
+    const roleText =
+        document.getElementById("roleText")
+
+    roleText.innerText =
+        `Role: ${role}`
+
+
+    if(role === "admin"){
+
+        document
+            .getElementById("adminPanel")
+            .style.display = "block"
+    }
+
+    loadTasks()
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Auth</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <h1>TaskFlow</h1>
+
+        <p class="subtitle">
+            Secure task management API
+        </p>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <div class="buttons">
+
+            <button onclick="registerUser()">
+                Register
+            </button>
+
+            <button onclick="loginUser()">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
