@@ -16,8 +16,6 @@ function showToast(message){
 }
 
 
-// REGISTER
-
 async function registerUser(){
 
     const username =
@@ -47,8 +45,6 @@ async function registerUser(){
     showToast(data.message || data.detail)
 }
 
-
-// LOGIN
 
 async function loginUser(){
 
@@ -103,8 +99,6 @@ async function loginUser(){
 }
 
 
-// CREATE TASK
-
 async function createTask(){
 
     const title =
@@ -140,8 +134,6 @@ async function createTask(){
     loadTasks()
 }
 
-
-// LOAD TASKS
 
 async function loadTasks(){
 
@@ -264,8 +256,6 @@ async function editTask(taskId, oldTitle, oldDescription){
 }
 
 
-// DELETE TASK
-
 async function deleteTask(taskId){
 
     const confirmDelete = confirm(
@@ -298,7 +288,6 @@ async function deleteTask(taskId){
 }
 
 
-//LOAD USERS (ADMIN)
 async function loadUsers(){
 
     const token =
@@ -336,8 +325,6 @@ async function loadUsers(){
     })
 }
 
-
-// LOGOUT
 
 function logout(){
 
