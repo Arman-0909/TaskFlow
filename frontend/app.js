@@ -213,8 +213,6 @@ async function loadTasks(){
 }
 
 
-// EDIT TASK
-
 async function editTask(taskId, oldTitle, oldDescription){
 
     const title = prompt(
@@ -249,14 +247,16 @@ async function editTask(taskId, oldTitle, oldDescription){
             },
 
             body:JSON.stringify({
-                title,
-                description,
+                title:title,
+                description:description,
                 completed:false
             })
         }
     )
 
     const data = await response.json()
+
+    console.log(data)
 
     showToast(data.message || data.detail)
 
