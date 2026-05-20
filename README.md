@@ -140,7 +140,7 @@ TASKFLOW/
 
 Clone the repository:
 
-git clone YOUR_GITHUB_REPO
+git clone https://github.com/Arman-0909/TaskFlow
 
 Move into project folder:
 
