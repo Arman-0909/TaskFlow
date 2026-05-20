@@ -1,6 +1,18 @@
 # TaskFlow API
 
-A scalable backend task management system built using FastAPI, PostgreSQL, and JWT Authentication with Role-Based Access Control.
+TaskFlow API is a scalable task management backend built using FastAPI, PostgreSQL, JWT Authentication, and Role-Based Access Control.
+
+The project includes a minimal frontend dashboard for interacting with APIs and testing authentication, CRUD operations, and admin features.
+
+---
+
+## Login & Register
+
+Users can create accounts and securely log in using JWT authentication.
+
+![Login/Register](Docs/Login-Register.png)
+
+---
 
 ## Features
 
@@ -8,18 +20,55 @@ A scalable backend task management system built using FastAPI, PostgreSQL, and J
 - JWT Authentication
 - Role-Based Access Control (User/Admin)
 - Task CRUD Operations
-- PostgreSQL Database Integration (Neon)
+- PostgreSQL Database Integration
 - Protected API Routes
 - Admin-only APIs
 - Swagger API Documentation
 - Minimal Frontend Dashboard
-- Structured Project Architecture
+- Structured Backend Architecture
+
+---
+
+## User Dashboard
+
+Normal users can:
+- Create tasks
+- Edit tasks
+- Delete tasks
+- View only their own tasks
+
+![User Dashboard](Docs/User_dashboard.png)
+
+---
+
+## Admin Dashboard
+
+Admins can:
+- View all users
+- Access all tasks
+- Manage all user tasks
+
+Admin accounts are managed manually through the database for security purposes.
+
+![Admin Dashboard](Docs/Admin_Dashboard.png)
+
+---
+
+## Database
+
+The project uses PostgreSQL for database management. Neon cloud PostgreSQL was used during development, but local PostgreSQL setups are also supported.
+
+Role values can be managed directly from the database.
+
+![Database](Docs/Db_table.png)
+
+---
 
 ## Tech Stack
 
 ### Backend
 - FastAPI
-- PostgreSQL (Neon)
+- PostgreSQL
 - SQLAlchemy
 - JWT Authentication
 - Passlib
@@ -28,6 +77,8 @@ A scalable backend task management system built using FastAPI, PostgreSQL, and J
 - HTML
 - CSS
 - Vanilla JavaScript
+
+---
 
 ## Project Structure
 
@@ -65,11 +116,25 @@ TASKFLOW/
 
 │
 
+├── Docs/
+
+│   ├── Login-Register.png
+
+│   ├── User_dashboard.png
+
+│   ├── Admin_Dashboard.png
+
+│   └── Db_table.png
+
+│
+
 ├── .env
 
 ├── requirements.txt
 
 └── README.md
+
+---
 
 ## Installation
 
@@ -85,15 +150,19 @@ Install dependencies:
 
 pip install -r requirements.txt
 
+---
+
 ## Environment Variables
 
 Create a `.env` file in root directory:
 
-DATABASE_URL=YOUR_NEON_DATABASE_URL
+DATABASE_URL=YOUR_DATABASE_URL
 
 SECRET_KEY=your_secret_key
 
 ALGORITHM=HS256
+
+---
 
 ## Run Backend
 
@@ -107,6 +176,8 @@ Swagger Docs:
 
 http://127.0.0.1:8000/docs
 
+---
+
 ## Run Frontend
 
 Open:
@@ -114,6 +185,8 @@ Open:
 frontend/index.html
 
 in browser.
+
+---
 
 ## API Features
 
@@ -124,7 +197,7 @@ in browser.
 
 ### Tasks
 - Create Task
-- Read Tasks
+- Read Task
 - Update Task
 - Delete Task
 
@@ -132,16 +205,7 @@ in browser.
 - View All Users
 - View All Tasks
 
-## Role-Based Access
-
-### User
-- Manage only own tasks
-
-### Admin
-- Access all tasks
-- Access all users
-
-Admin accounts are managed manually through the database for security purposes.
+---
 
 ## Scalability Notes
 
@@ -155,15 +219,3 @@ Possible future improvements:
 - CI/CD pipelines
 - Load balancing
 - Async background jobs
-
-## Screenshots
-
-Add screenshots here:
-- Login Page
-- Dashboard
-- Swagger Documentation
-- Admin Panel
-
-## Author
-
-Ayush
